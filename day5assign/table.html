@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/table.css">
+</head>
+<body>
+    <section>
+        <article>
+            <main>
+                <form action="">
+                    <input type="text"  id="patient" value="">
+                    <input type="text" placeholder="Type of Test" id="test" >
+                    <!-- <input type="text" placeholder="Type amount" id="Amount"> -->
+                    <input type="submit" value="CLICK HERE">
+                </form>
+            </main>
+            <aside>
+                <div class="leftBlock">
+                    <table id="left">
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Hospital Facility</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>General Check Up</td>
+                            <td id="fivehun">500</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Ecg</td>
+                            <td id="onefive">150</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Anti TPO Test</td>
+                            <td id="onezerotwo">1020</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Blood Test</td>
+                            <td id="five1">500</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>HIV Test</td>
+                            <td id="sevenhun">700</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>X-ray</td>
+                            <td id="fourhun">400</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Sonography</td>
+                            <td id="sevenfive">750</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Dailisis</td>
+                            <td id="sevenhun1">1000</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>City Scanning</td>
+                            <td id="fifteen">15000</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Thyroid Test</td>
+                            <td id="fivezero">500</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="rightBlock">
+               <fieldset>
+                <legend>your bill</legend>
+                <h3>Your Name: <span id="patient1"></span></h3>
+                
+                <table class="right">
+                        <thead>
+                            <tr>
+                               
+                                <td>Test</td>
+                            <td>Amount</td>
+                            </tr>
+                        </thead>
+                        <tbody id="billStatement">
+
+                        </tbody>
+                </table>
+               </fieldset>
+               <h1>your amt :<span id="totAmt"></span></h1>
+                </div>
+            </aside>
+        </article>
+    </section>
+    <script>
+    
+        // var table = document.getElementById('left'),rIndex;
+        
+        // for(var i = 0; i < table.rows.length; i++)
+        // {
+        //     table.rows[i].onclick = function()
+        //     {
+        //          rIndex = this.rowIndex;
+               
+        //          document.getElementById("test").value = this.cells[1].innerHTML;
+        //          document.getElementById("Amount").value = this.cells[2].innerHTML;
+        //          //document.getElementById("lname").value = this.cells[1].innerHTML;
+        //          //document.getElementById("age").value = this.cells[2].innerHTML;
+        //     };
+        // }
+        
+        document.getElementById("patient").addEventListener("keyup",function(){
+            var patName=document.getElementById("patient").value;
+            document.getElementById("patient1").innerHTML=patName
+        })
+        let form=document.querySelector("form");
+        var generalCheck="";
+        var ecg="";
+      var first=document.getElementById("fivehun").innerText;
+      var second=document.getElementById("onefive").innerText;
+      var third=document.getElementById("onezerotwo").innerText;
+      var fourth=document.getElementById("five1").innerText;
+      var fifth=document.getElementById("sevenhun").innerText;
+      var six=document.getElementById("fourhun").innerText;
+      var seven=document.getElementById("sevenfive").innerText;
+      var eight=document.getElementById("sevenhun1").innerText;
+      var nine=document.getElementById("fifteen").innerText;
+      var ten=document.getElementById("fivezero").innerText;
+      var sum=0;
+      var totamt;
+        document.getElementById("test").addEventListener("keyup",function(){
+            let testVal=this.value;
+           if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="General Check Up"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=first;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =0+Number(first);
+        //    console.log(sum);
+           totAmt.textContent=sum;
+           }
+           
+        })
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="Ecg"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=second;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(second);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+          
+        })
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="Anti TPO Test"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=third;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(third);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+        })
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="Blood Test"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=fourth;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(fourth);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+        })
+        
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="HIV Test"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=fifth;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(fifth);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+        })
+        
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="X-ray"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=six;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(six);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+        })
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="Sonography"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=seven;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(seven);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+        })
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="Dailisis"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=eight;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(eight);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+        })
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="City Scanning"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=nine;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(nine);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+        })
+        document.getElementById("test").addEventListener("keyup",function(){
+            
+            let testVal=this.value;
+        if(this.value==""||this.value==0)
+           {
+            document.getElementById("billStatement").innerHTML="";
+           }
+           else if(this.value=="Thyroid Test"){
+            var data1=document.createElement('td');
+            var data2=document.createElement('td');
+            var row=document.createElement('tr');
+            
+            data1.innerHTML=testVal;
+            data2.innerHTML=ten;
+            row.appendChild(data1);
+            row.appendChild(data2);
+            document.getElementById('billStatement').appendChild(row);
+            sum =Number(sum)+Number(ten);
+        //    console.log(sum);
+           totAmt.innerHTML=sum;
+           }
+        })
+ </script> 
+    <script src="./js/table.js"></script>
+</body>
+</html>

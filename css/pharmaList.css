@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#mainSection{
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+#mainSection > article{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+}
+#mainSection > article > main form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 400px;
+    height: 180px;
+    padding: 30px;
+   
+}
+#mainSection > article > main form input[type="text"]{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+}
+#mainSection > article > main form input[type="submit"]{
+    padding: 10px;
+    width: 30%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+#mainSection > article > aside{
+    width: 100%;
+    height:100vh;
+    display: flex;
+    justify-content: space-between;
+
+}
+.leftBlock{
+    width:600px;
+    height: 400px;
+    padding: 10px;
+    text-align: center;
+}
+#mainSection > article > aside .leftBlock div{
+    background-color: rgb(19, 139, 187);
+    margin: 2px;
+}
+#mainSection > article > aside .leftBlock div span{
+display: inline-block;
+width: 180px;
+height: 30px;
+color: white;
+font-size: 16px;
+margin-bottom: 5px;
+padding: 5px;
+font-family: 'Noto Sans', sans-serif;
+font-weight: bolder;
+}
+#rightBlock{
+    width:600px;
+    height: 400px;
+    padding: 10px;
+    font-size: 20px;
+}
+#rightBlock table{
+    width:450px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    border: 1px solid black;
+}
+#rightBlock table input[type="submit"]{
+    background-color: white;
+    border: 1px solid red;
+    padding: 5px;
+    color: red;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+}
+#rightBlock table thead{
+    background-color: white;
+    
+}
+#rightBlock table tr:nth-of-type(odd){
+    background-color: cornflowerblue;
+    height: 30px;
+    color: white;
+}
+#rightBlock table tr:nth-of-type(even){
+    background-color: #efef;
+    height: 30px;
+}
+#rightBlock h1:last-child{
+    margin-top: 20px;
+    text-transform: capitalize;
+    text-align: center;
+}

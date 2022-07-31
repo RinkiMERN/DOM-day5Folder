@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/pharmaList.css">
+</head>
+<body>
+    <section id="mainSection">
+        <article>
+            <main>
+                <form action="">
+                    <input type="text" placeholder="Enter Name">
+                    <p id="error"></p>
+                    <input type="text" placeholder="Type Test">
+                    <p id="error2"></p>
+                    <input type="submit" value="SUBMIT">
+                </form>
+            </main>
+            <aside>
+                <div class="leftBlock">
+                <div><span>Sl.No.</span>    <span>Hospital Facility</span>  <span>Fee</span></div>
+                <div><span>1</span>     <span>General Check Up</span>       <span id="fee1">500</span></div>
+                <div><span>2</span>         <span>Ecg</span>                <span id="fee2">150</span></div>
+                <div><span>3</span>     <span>Anti TPO Test</span>          <span id="fee3">1020</span></div>
+                <div><span>4</span>         <span>Blood Test</span>         <span id="fee4">500</span></div>
+                <div><span>5</span>         <span>HIV Test</span>           <span id="fee5">700</span></div>
+                <div><span>6</span>         <span>X-ray</span>              <span id="fee6">400</span></div>
+                <div><span>7</span>         <span>Sonography</span>         <span id="fee7">750</span></div>
+                <div><span>8</span>         <span>Dailisis</span>           <span id="fee8">1000</span></div>
+                <div><span>9</span>         <span>City Scanning</span>      <span id="fee9">15000</span></div>
+                <div><span>10</span>        <span>Thyroid Test</span>       <span id="fee10">500</span></div>
+                </div>
+                <div id="rightBlock">
+                   <table id="bill">
+                    <h1> Name : &nbsp;<span id="name"></span></h1>
+                    <thead>
+                        <tr>
+                            <td>Test</td>
+                            <td>Amount</td>
+                            <td> </td>
+                        </tr>
+                    </thead>
+                    <tbody id="tests">
+
+                    </tbody>
+                   </table>
+                   <h1>Your amount :<span id="sum"></span></h1>
+                </div>
+            </aside>
+        </article>
+    </section>
+    <script src="./js/pharmaList.js"></script>
+    <!-- <script src="./js/pharmaList2.js"></script> -->
+</body>
+</html>

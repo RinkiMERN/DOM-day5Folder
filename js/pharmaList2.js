@@ -1,0 +1,1 @@
+let divTest=document.querySelector(".leftBlock")
